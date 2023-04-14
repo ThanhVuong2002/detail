@@ -1,16 +1,14 @@
 <?php
-$mysqli = mysqli_connect("localhost","root","","demo");
+$mysqli = mysqli_connect("localhost","root","","model");
 if ($mysqli == false){
    die("ERROR: Could not connect.".mysqli_connect_error());
 }
 
-$sql= "CREATE TABLE prd(
-   id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-   image VARCHAR(1000) NOT NULL,
-   name  VARCHAR(50) NOT NULL,
-   price VARCHAR(70) NOT NULL,
-   des VARCHAR(1000) NOT NULL
-)";
+
+$sql="CREATE TABLE categories(
+   id INT (11)UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+   name VARCHAR(255) NOT NULL
+   )";
 
 if ($mysqli->query($sql)==true){
    echo "Table created successfully.";
